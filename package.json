@@ -5,6 +5,9 @@
   "author": "Rodin Andrey",
   "private": true,
   "license": "UNLICENSED",
+  "engines": {
+    "node": "v16.14.0"
+  },
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
