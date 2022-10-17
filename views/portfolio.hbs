@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Портфолио. Плавко Михаил. М33122</title>
+    {{> head}}
+
+    <script src="https://unpkg.com/typeit@8.1.0/dist/index.umd.js"></script>
+
+</head>
+
+<body>
+    {{> header}}
+    
+    <main>
+        <section class="block" id="Animal">
+            <div class="container">
+                <h2>Мое тотемное животное</h2>
+                <pre>
+           """---==____   ____==---"""
+        """"---==='__  """  __`===---"""'
+         """"--===(___=-_-=___)===--""""
+         """"--=== ) _=====_ ( ===--""""
+          """"--===//"\"""/"\\===--""""
+  ___----______---|___-----___|---______-----___
+,'        """"--==`\`       '/'==--""""       __`----__
+\          """"---==| \   / |==---""""  __--""  """"-_
+ \                  `:-| |-:'      \ /'"              `\
+  )                 | `/ \' |      /'     ,------_      `\
+ '                  | `-^-' |    /'     /'        `\      \
+                    |       |   |     /\\           \      \
+                    |       |  |     |  \ \          \      \
+                    \       \  |     |___) )         |      |
+                    \       \-"|     |_---'          |      |
+                    _\       \-\     \              /       |
+                  /' \       \  \     \         _,-"       /
+                /   _-\       \__\_____\____--""         /
+               (   ""--\                               /'
+                `-__    \_                         _,-'
+                    `--_  "-___________________--""
+                        `\   \__    )    )
+                          \     "--"    /
+                           \__        /'
+                              ""---""'           
+                </pre>
+            </div>
+        </section>
+
+        <span id="myElement" class="myElementC"></span>
+        <script src="js/animation.js"></script>
+
+        <section class="block_table">
+            <div class="table">
+                <div class="table_row">
+                    <div class="table_item">id</div>
+                    <div class="table_item">Имя</div>
+                    <div class="table_item">Телефон</div>
+                    <div class="table_item">email</div>
+                </div>
+
+                {{#repeate 3}}
+                    <div class="table_row">
+                        {{#repeate 4}}
+                        <div class="table_item">загрузка...</div>
+                        {{/repeate}}
+                    </div>
+                {{/repeate}}
+            </div>
+        </section>
+
+    </main>
+    {{> footer}}
+</body>
+
+<script src="js/using_data.js"></script>
+
+</html>

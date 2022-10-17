@@ -1,0 +1,20 @@
+{{#unless signed_in}}
+<div class="login-wrapper">
+    <form id="login" action="/auth/login" method="post">
+        <label for="email">
+            <input placeholder="Email" type="text" id="email" name="email">
+        </label>
+        <label for="password">
+            <input placeholder="Пароль" type="text" id="password" name="password">
+        </label>
+        <input type="submit" value="Войти">
+    </form>
+</div>
+{{else}}
+<div class="login-wrapper">
+    Михаил, вы авторизованы
+    <form id="logout" action="/logout" method="post">
+        <button type='submit' name='parameter'>Выйти</button>
+    </form>
+</div>
+{{/unless}}

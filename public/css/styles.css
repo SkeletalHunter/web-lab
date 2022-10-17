@@ -1,0 +1,210 @@
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;1,300&family=Zen+Antique&family=Zen+Old+Mincho&display=swap');
+
+@font-face {
+    font-family: 'Exec Corners';
+    src: local('Exec Corners Medium'), local('Exec-Corners-Medium'),
+        url('/fonts/Exec-Corners-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+  }
+
+html {
+    height: 100%;
+}
+
+body {
+    background: linear-gradient(-45deg, #ffe60030 30%, #b700ff30 33% 60%, #1eff0030 66%);
+	background-size: 300% 300%;
+	animation: gradient 15s ease infinite;
+    width: 100%;
+    font-family: 'Ubuntu', 'Zen Antique', 'Zen Old Mincho', 'Exec-Corners-Medium';
+}
+
+header {
+    backdrop-filter: hue-rotate(90deg) contrast(1.1);
+    padding: 0.65104167vw 0;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.mini_block {
+    width: 100%;
+}
+
+main, footer {
+    width: 100%;
+    font-family: 'Ubuntu', 'Zen Antique', 'Zen Old Mincho';
+}
+
+.container {
+    max-width: 78.125vw;
+    margin: 0 auto;
+}
+
+section#About .container{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding-top: 15.15152vh; 
+    line-height: 1.1rem;
+}
+
+section#About p {
+    text-indent: 0.5rem;
+    letter-spacing: 0rem;
+}
+
+section#About h2 {
+    text-align: center;
+}
+
+header a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: rgb(0, 0, 0);
+    transition: all 1s ease-out;
+}
+
+header a:hover {
+    font-style: unset;
+    color: rgb(36, 128, 24);
+    background-color: rgba(255, 220, 130, 0.5);
+    text-transform: uppercase;
+}
+
+header a.active {
+    font-style: unset;
+    color: #FFFFFF;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
+}
+
+footer {
+    backdrop-filter: hue-rotate(135deg) contrast(1.1);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 1vw 0;
+    position: absolute;
+
+}
+
+.block h2 {
+    font-size: 1.4rem;
+    color: rgb(0, 0, 0);
+    text-shadow: 1px 1px 8px rgb(183, 0, 255);
+    text-decoration-line: underline;
+    padding: 0.65104167vw 0;
+    opacity: 70%;
+}
+
+section#Code {
+    margin-top: 4rem;
+}
+
+section#Code img {
+    width: 9.38rem;
+    box-shadow: 0 0 2rem rgb(255, 196, 0);
+    transition: 2s;
+    transition-timing-function: ease-in-out;
+}
+
+section#Code img:hover {
+    transform: rotate(720deg);
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+@media screen and (max-width: 865px) {
+    #About .container, footer{
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    /* скрыть дракона */
+    #Animal pre{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    #Code h2, #Code pre{
+        display: none;
+    }
+    header a{
+        font-size: 0.8em;
+    }
+}
+
+.block_table .table{
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 60px;
+    margin-bottom: 20px;
+}
+
+.block_table {
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.table_row {
+    display: contents;
+}
+
+.table_item {
+    text-align: center;
+    font-size: 1.5rem;
+    align-self: center;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.table_row:nth-child(even) .table_item {
+    background: #d0bfff7a;
+}
+
+#myElement {
+    display: block;
+    justify-content: center;
+    font-size: 5rem;
+}

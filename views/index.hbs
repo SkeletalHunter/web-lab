@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Главная. Плавко Михаил - М33122</title>
+    {{> head}}
+</head>
+
+<body>
+    <div class="circle"></div>
+    {{> header}}
+
+    <main>
+        <section class="block" id="About">
+            <div class="container">
+                <div class="mini_block" id="WhoAmI">
+                    <h2>Кто Я?</h2>
+                    <p>Текст <br>Еще Текст</p>
+                </div>
+                <div class="mini_block" id="PersonalInfo">
+                    <h2>Персональная Инфо?</h2>
+                    <time>14:51</time>
+                    <p>Текст<br>Еще Текст</p>
+                </div>
+                <div class="mini_block" id="MyExpertise">
+                    <h2>В чем я хорош?(Успехи)</h2>
+                    <dl>
+                        <dt>HTML</dt>
+                        <dd>Язык гипертекстовой разметки</dd>
+                        <dt>CSS</dt>
+                        <dd>Каскадные таблицы стилей</dd>
+                        <dd>Язык для оформления HTML-документов</dd>
+                    </dl>
+                    <ul>
+                        <li>Программирование</li>
+                        <li>Проектная деятельность</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        
+
+        <section class="block" id="Code">
+            <div class="container">
+                <img src="images/image_01.jpg">
+                <h2>Код за который мне не стыдно</h2>
+                <pre><code>public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World");
+    }
+}
+                </code></pre>
+            </div>
+        </section>
+    </main>
+
+    {{> footer}}
+</body>
+</html>

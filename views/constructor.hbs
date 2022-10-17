@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Плавко Михаил - М33122</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/constructor.css">
+    
+    <script src="js/nav_change.js"></script>
+    <script src="js/constructor.js"></script>
+
+</head>
+<body>
+    <div class="app">
+        <header>
+            <nav>
+                <a href="index.hbs">Главная</a>
+                <a href="constructor.hbs">Конструктор</a>
+                <a href="portfolio.hbs">Портфолио</a>
+            </nav>
+        </header>
+        <form id="settings">
+            <h1>Настройки</h1>
+    
+            <div class="settings-wrapper">
+                <div class="form-item">
+                    <label>Max занятий в день</label>
+                    <select name="amount-subjects">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                    </select>
+                </div>
+    
+                <div class="form-item">
+                    <label>Всего дней в неделе</label>
+                    <select name="amount-day">
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                </div>
+            </div>
+    
+            <input type="submit" value="Создать">
+        </form>
+    
+        <div class="week">
+            <div class="day">
+    
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html> 
