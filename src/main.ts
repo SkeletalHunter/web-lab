@@ -13,8 +13,8 @@ import { EventModule } from './event/event.module';
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
 
-  //const PORT = app.get(ConfigService).get<number>('PORT') || 3005;
-  await app.listen(process.env.PORT);
+  const PORT = app.get(ConfigService).get<number>('PORT') || 3005;
+  //await app.listen(process.env.PORT);
   app.useStaticAssets(join(__dirname, '..', 'public'));
   app.setBaseViewsDir(join(__dirname, '..', 'views'));
   app.setViewEngine('hbs');
@@ -31,7 +31,7 @@ async function bootstrap() {
   // await prismaService.enableShutdownHooks(app);
 
   const config = new DocumentBuilder()
-    .setTitle('Mihail Plavko: My API for Users and Events')
+    .setTitle('Rodin Andrey: My API for Users and Events')
     .setDescription('API description')
     .setVersion('1.0')
     .build();
