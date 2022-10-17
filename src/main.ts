@@ -13,8 +13,8 @@ import { EventModule } from './event/event.module';
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
 
-  const PORT = app.get(ConfigService).get<number>('PORT') || 3000;
-
+  //const PORT = app.get(ConfigService).get<number>('PORT') || 3005;
+  await app.listen(process.env.PORT);
   app.useStaticAssets(join(__dirname, '..', 'public'));
   app.setBaseViewsDir(join(__dirname, '..', 'views'));
   app.setViewEngine('hbs');
