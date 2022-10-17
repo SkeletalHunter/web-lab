@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <title>Главная. Родин Андрей - М33041</title>
+  {{> head}}
+</head>
+<body>
+<main>
+  <h2>Список людей</h2>
+  <div id="people-window">
+    <button id="RefreshButton" onclick="createPeople()">Next</button>
+    <div id="people-info">
+
+      <template id="people-template">
+        ID: <p id="people-ID"></p>
+        Name: <p id="people-name"></p>
+        Username: <p id="people-username"></p>
+        Geo: <p id="people-geo"></p>
+      </template>
+    </div>
+    <img src="img/loading.gif" id="preloader">
+  </div>
+</main>
+{{> footer}}
+</body>
+</html>
+<script src="js/JSON.js "></script>

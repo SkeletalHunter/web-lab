@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Мои достижения</title>
+    {{> head}}
+
+    <script src="https://unpkg.com/typeit@8.1.0/dist/index.umd.js"></script>
+
+</head>
+
+<body>
+    {{> header}}
+
+    <main id="main">
+      <section>
+        <h2>Привет!</h2>
+        <h3>Мои достижения</h3>
+        <ol>
+          <li>Я родился
+            <time datetime="2001-02-27">27.02.2001</time>
+          </li>
+          <li>Выучился в
+            <u>ФТШ</u>
+          </li>
+          <li>Поступил в
+            <u>ИТМО</u>
+          </li>
+        </ol>
+      </section>
+      <section>
+        <h4>Использованные сокращения</h4>
+        <dl>
+          <dt>
+            <time datetime="2001-02-27">27.02.2001</time>
+          </dt>
+          <dd>
+            <time datetime="2001-02-27">27 февраля 2001 года</time>
+          </dd>
+          <dt>ФТШ</dt>
+          <dd>Физико-техническая школа</dd>
+          <dt>ИТМО</dt>
+          <dd>Университет информационных технологий, механики и оптики</dd>
+        </dl>
+      </section>
+      <section>
+        <h3>Мои умения</h3>
+        <ul>
+          <li>Вставить этого прекрасного волка<br>
+            <pre class="ascii-art">
+                              __
+                            .d$$b
+                          .' TO$;\
+                         /  : TP._;
+                        / _.;  :Tb|
+                       /   /   ;j$j
+                   _.-"       d$$$$
+                 .' ..       d$$$$;
+                /  /P'      d$$$$P. |\
+               /   "      .d$$$P' |\^"l
+             .'           `T$P^"""""  :
+         ._.'      _.'                ;
+      `-.-".-'-' ._.       _.-"    .-"
+    `.-" _____  ._              .-"
+   -(.g$$$$$$$b.              .'
+     ""^^T$$$P^)            .(:
+       _/  -"  /.'         /:/;
+    ._.'-'`-'  ")/         /;/;
+ `-.-"..--""   " /         /  ;
+.-" ..--""        -'          :
+..--""--.-"         (\      .-(\
+  ..--""              `-\(\/;`
+    _.                      :
+                            ;`-
+                           :\
+                           ;
+                </pre>
+          </li>
+          <li>
+            Копировать стихи и вставить сюда
+            <div class="quote">
+              <blockquote href="https://stihi.ru/editor/2020/08/19/3413">
+                <p>
+                  И был творенья первый день,<br>
+                  Где можно ничего не делать<br>
+                  (ведь впереди - еще неделя,<br>
+                  И небо - кепкой набекрень)...
+                </p>
+              </blockquote>
+            </div>
+            <a class="link" href="https://stihi.ru/editor/2020/08/19/3413">Ссылка на источник</a>
+          </li>
+          <li>Придумать
+            <a class="line-through">нормальную</a>
+            формулу:<br>
+            <div class="formula">
+              Brains<sub>1</sub><sup>2</sup> + Brains<sub>2</sub><sup>2</sup> = Invention
+            </div>
+          </li>
+          <li>Написал данный код
+            <pre class="script">
+using System;
+using Battles;
+using System.Collections.Generic;
+using Lab2;
+
+namespace Actions
+{
+    class Actions
+    {
+        public static void DealDamage
+        (BattleUnitsStack Stack,
+        int Damage)
+        {
+            int HitPoints = (Stack.GetCountInfo() - 1)
+            * Stack.GetUnitInfo().GetHitPointsInfo()
+            + Stack.GetCurHitPoints();
+            if (HitPoints > Damage)
+            {
+                int NewHitPoints = (HitPoints - Damage)
+                % Stack.GetUnitInfo().GetHitPointsInfo();
+                if (NewHitPoints == 0)
+                {
+                    Stack.StatsSetHitPoints(Stack.GetUnitInfo()
+                    .GetHitPointsInfo());
+                    Stack.StatsSetCount((HitPoints - Damage)
+                    / Stack.GetUnitInfo().GetHitPointsInfo());
+                }
+                else
+                {
+                    Stack.StatsSetHitPoints(NewHitPoints);
+                    Stack.StatsSetCount((HitPoints - Damage)
+                    / Stack.GetUnitInfo().GetHitPointsInfo() + 1);
+                }
+            }
+            else
+            {
+                Stack.StatsSetHitPoints(0);
+                Stack.StatsChangeCount(0);
+            }
+        }
+
+        public static void EndOfUnitTurn(BattleUnitsStack Unit)
+        {
+
+        }
+
+        public static BattleUnitsStack ChooseUnit(BattleArmy Army)
+        {
+            Console.WriteLine("Choose the stack to attack");
+            int count = 0;
+            string input;
+            foreach (BattleUnitsStack ArmyUnit in Army.GetSquad())
+            {
+                count++;
+                Console.WriteLine(count
+                + ": "
+                + ArmyUnit.GetType()
+                + "["
+                + ArmyUnit.GetCurCount()
+                + "]");
+            }
+            while (true)
+            {
+                input = Console.ReadLine();
+                if (int.TryParse(input, out int x))
+                {
+                    if (x > count
+                    || Army.GetSquad()[x - 1].GetCurCount()
+                    == 0)
+                    {
+                        if (x > count)
+                        {
+                            Console.WriteLine
+                            ("That stack does not exist");
+                        }
+                        else
+                        {
+                            Console.WriteLine
+                            ("That stack is dead");
+                        }
+                    }
+                    else
+                    {
+                        return Army.GetSquad()[x - 1];
+                    }
+                }
+                else
+                {
+                    Console.WriteLine
+                    ("That is not a number");
+                }
+            }
+        }
+    }
+}
+            </pre>
+          </li>
+        </ul>
+      </section>
+      <aside>Не будьте мной!</aside>
+    </main>
+    {{> footer}}
+</body>
+
+<script src="js/using_data.js"></script>
+
+</html>

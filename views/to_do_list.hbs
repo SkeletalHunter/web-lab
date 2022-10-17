@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+    {{> head}}
+
+    <link rel="stylesheet" href="css/constructor.css">
+    <script src="js/constructor.js"></script>
+
+</head>
+<body>
+{{> header}}
+<main>
+  <form id="addingForm">
+    <input type="text" class="form-control" id="task-input" required="required" placeholder="Введите задание...">
+    <input type="submit" id="submit" value="Добавить">
+    <button id="delete-all" onclick="deleteAll()">Удалить все</button>
+  </form>
+  <h2>Мой список дел</h2>
+  <div class="queue">
+    <ul class="list-group" id="tasks"></ul>
+    <template>
+      <li class="task-text"><button class="delete">x</button></li>
+    </template>
+  </div>
+  <>
+</main>
+    {{> footer}}
+</body>
+</html> 

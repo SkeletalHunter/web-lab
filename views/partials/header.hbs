@@ -1,8 +1,12 @@
-<header>
-    <nav>
-        <a href="/">Главная</a>
-        <a href="constructor">Конструктор</a>
-        <a href="portfolio">Портфолио</a>
-        {{>login}}
-    </nav>
+<header id="header">
+  {{>login}}
+  <div class="headInfo">
+    <img class="avatar" id="avatar" onclick="changeImage()" src="img/1.JPG" alt="pic">
+    <h1>
+      Личный профиль
+    </h1>
+    <h2>
+      Родин Андрей Игоревич
+    </h2>
+  </div>
 </header>
