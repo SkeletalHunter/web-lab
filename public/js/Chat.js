@@ -8,23 +8,23 @@ message.addEventListener('keypress', (event) => {
   }
 });
 
-const chatSocket = io('/chat');
+const toDoSocket = io('/chat');
 
 function send() {
-  chatSocket.emit('message', message.value);
+  toDoSocket.emit('message', message.value);
   message.value = '';
   message.focus();
 }
 
-chatSocket.on('connect', () => {
+toDoSocket.on('connect', () => {
   console.log('socket connected');
 });
 
-chatSocket.on('disconnect', () => {
+toDoSocket.on('disconnect', () => {
   console.log('socket disconnected');
 });
 
-chatSocket.on('message', (message) => {
+toDoSocket.on('message', (message) => {
   console.log('received:', message);
   receiveMessage(message);
 });
